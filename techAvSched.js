@@ -12,7 +12,9 @@ module.exports = function(options, http) {
          * @param  {Object}     requestBody     The job definition
          */
         scheduleJob: function(ruuid, requestBody) {
-            return http.post(ruuid, options.url + "/sched/api/job-def", requestBody, null, null, null, {
+            return http.post(ruuid, {
+                url: options.url + "/sched/api/job-def",
+                body: requestBody,
                 headers: {
                     "X-Sched-secret": options.secret
                 }
@@ -25,9 +27,11 @@ module.exports = function(options, http) {
          * @param  {int}     jobId      The uid of the job to acknowledge
          */
         ackJob: function(ruuid, jobId) {
-            return http.post(ruuid, options.url + "/sched/api/job-action/ack", {
-                id: jobId
-            }, null, null, null, {
+            return http.post(ruuid, {
+                url: options.url + "/sched/api/job-action/ack",
+                body: {
+                    id: jobId
+                },
                 headers: {
                     "X-Sched-secret": options.secret
                 }
@@ -40,9 +44,11 @@ module.exports = function(options, http) {
          * @param  {int}     jobId      The uid of the job to acknowledge
          */
         deleteJob: function(ruuid, jobId) {
-            return http.delete(ruuid, options.url + "/sched/api/job-def", {
-                id: jobId
-            }, null, null, null, {
+            return http.delete(ruuid, {
+                url: options.url + "/sched/api/job-def",
+                body: {
+                    id: jobId
+                },
                 headers: {
                     "X-Sched-secret": options.secret
                 }
