@@ -5,7 +5,6 @@
  */
 module.exports = function(options, http) {
     return {
-
         /**
          * Schedule a job
          *
@@ -13,10 +12,10 @@ module.exports = function(options, http) {
          */
         scheduleJob: function(ruuid, requestBody) {
             return http.post(ruuid, {
-                url: options.url + "/sched/api/job-def",
+                url: options.url + '/sched/api/job-def',
                 body: requestBody,
                 headers: {
-                    "X-Sched-secret": options.secret
+                    'X-Sched-secret': options.secret
                 }
             });
         },
@@ -28,12 +27,12 @@ module.exports = function(options, http) {
          */
         ackJob: function(ruuid, jobId) {
             return http.post(ruuid, {
-                url: options.url + "/sched/api/job-action/ack",
+                url: options.url + '/sched/api/job-action/ack',
                 body: {
                     id: jobId
                 },
                 headers: {
-                    "X-Sched-secret": options.secret
+                    'X-Sched-secret': options.secret
                 }
             });
         },
@@ -45,12 +44,12 @@ module.exports = function(options, http) {
          */
         deleteJob: function(ruuid, jobId) {
             return http.delete(ruuid, {
-                url: options.url + "/sched/api/job-def",
+                url: options.url + '/sched/api/job-def',
                 body: {
                     id: jobId
                 },
                 headers: {
-                    "X-Sched-secret": options.secret
+                    'X-Sched-secret': options.secret
                 }
             });
         }
