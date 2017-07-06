@@ -1,30 +1,30 @@
 {
-    "name": "node-tech-av-sched",
-    "version": "2.0.0",
-    "description": "Technical component to interact with av-sched",
-    "license": "MIT",
-    "main": "techAvSched.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/AirVantage/node-tech-av-sched.git"
+  "name": "node-tech-av-sched",
+  "version": "2.0.0",
+  "description": "Technical component to interact with av-sched",
+  "license": "MIT",
+  "main": "techAvSched.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AirVantage/node-tech-av-sched.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.1.1",
+    "grunt": "^0.4.5",
+    "grunt-release": "^0.11.0",
+    "grunt-tag": "^0.1.0",
+    "prettier": "^1.5.2"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "es6": true,
+      "mocha": true
     },
-    "dependencies": {},
-    "devDependencies": {
-        "eslint": "^4.1.1",
-        "grunt": "^0.4.5",
-        "grunt-release": "^0.11.0",
-        "grunt-tag": "^0.1.0",
-        "prettier": "^1.5.2"
-    },
-    "eslintConfig": {
-        "env": {
-            "node": true,
-            "es6": true,
-            "mocha": true
-        },
-        "extends": ["eslint:recommended"],
-        "rules": {
-            "linebreak-style": ["error", "unix"]
-        }
+    "extends": ["eslint:recommended"],
+    "rules": {
+      "linebreak-style": ["error", "unix"]
     }
+  }
 }
